@@ -1,0 +1,38 @@
+* {
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5 {
+	padding: .33em 0;
+}
+hr {
+	border-top: thin solid gray;
+	border-bottom: thin solid white;
+	margin: .5em 0;
+}
+.banner {
+	color: #ffffff;
+	background: #161616;
+	background: linear-gradient(180deg, #161632 0%, #164664 100%);
+	padding: 0 1em;
+}
+.content {
+	margin: auto;
+	max-width: 1024px;
+	width: 80%;
+	background: #eee;
+	padding: .5em 1em;
+	min-height: 100vh;
+	border: 2px #eee groove;
+	border: thin raised #646464;
+	box-shadow: 1px 0 6px 0 #646464;
+}
+@media only screen and (orientation: portrait) {
+	.content {
+		max-width: 100vw;
+		width: 100%;
+	}
+}

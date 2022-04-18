@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TF2 RolePlay Docs</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="request.js"></script>
+	<script>
+		function load(relative) {
+			if (relative.charAt(0)=='#') relative = relative.substring(1);
+			Request.GET(relative).then(req=>{
+				let at=document.querySelector('.content'); at.innerHTML = '';
+				let temp = document.createElement('template'); temp.innerHTML = req.responseText;
+				at.appendChild(document.adoptNode(temp.content)); mapLinks(at);
+			}).catch(req=>{
+				document.querySelector('.content').innerHTML = req instanceof XMLHttpRequest ? '<h1>'+req.statusText+'</h1>Could not load that page, sorry' : '<h1>Unexpected Error</h1>'+req ;
+			});
+		}
+		function mapLinks(elem) {
+			Array.from(elem.querySelectorAll('a')).forEach(link=>link.href='#'+link.pathname);
+		}
+		document.addEventListener('DOMContentLoaded', ()=>load(document.location.hash || 'main.htm'), {once:true});
+		window.addEventListener('hashchange', ()=>load(document.location.hash || 'main.htm'));
+	</script>
+</head>
+<body>
+	<div class="banner">
+		<h1>TF2 RolePlay</h1>
+	</div>
+	<div class="content">
+		Please Wait, Loading content...
+	</div>
+</body>
+</html>
