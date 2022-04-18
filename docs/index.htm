@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="style.css" />
 	<script src="request.js"></script>
 	<script>
+		const ghp_prefix = document.location.pathname.substring(0,document.location.pathname.indexOf('/',1)+1);
 		function load(relative) {
 			if (relative.charAt(0)=='#') relative = relative.substring(1);
 			Request.GET(relative).then(req=>{
@@ -16,7 +17,7 @@
 			});
 		}
 		function mapLinks(elem) {
-			Array.from(elem.querySelectorAll('a')).forEach(link=>link.href='#'+link.pathname);
+			Array.from(elem.querySelectorAll('a')).filter(link=>link.hostname==elem.hostname&&link.pathname.startsWith(ghp_prefix)).forEach(link=>link.href='#'+link.pathname.substring(ghp_prefix.length));
 		}
 		document.addEventListener('DOMContentLoaded', ()=>load(document.location.hash || 'main.htm'), {once:true});
 		window.addEventListener('hashchange', ()=>load(document.location.hash || 'main.htm'));
