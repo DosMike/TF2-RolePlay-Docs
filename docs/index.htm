@@ -17,7 +17,7 @@
 			});
 		}
 		function mapLinks(elem) {
-			Array.from(elem.querySelectorAll('a')).filter(link=>link.hostname==elem.hostname&&link.pathname.startsWith(ghp_prefix)).forEach(link=>link.href='#'+link.pathname.substring(ghp_prefix.length));
+			Array.from(elem.querySelectorAll('a')).filter(link=>link.hostname==location.hostname&&link.pathname.startsWith(ghp_prefix)).forEach(link=>link.href='#'+link.getAttribute('href'));
 		}
 		document.addEventListener('DOMContentLoaded', ()=>load(document.location.hash || 'main.htm'), {once:true});
 		window.addEventListener('hashchange', ()=>load(document.location.hash || 'main.htm'));
