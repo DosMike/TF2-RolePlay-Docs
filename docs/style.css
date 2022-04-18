@@ -13,6 +13,27 @@ hr {
 	border-bottom: thin solid white;
 	margin: .5em 0;
 }
+ul {
+	padding-left: 1em;
+}
+p,ul,table {
+	padding-bottom: 1em;
+}
+table {
+	border-collapse: collapse;
+}
+table tr:not(:first-child) {
+	border-top: thin solid gray;
+}
+table tr td:not(:first-child) {
+	border-left: thin solid gray;
+}
+table tr td {
+	padding: .3em .5em;
+}
+table tr:hover {
+	background: rgba(0,0,0,0.1);
+}
 .banner {
 	color: #ffffff;
 	background: #161616;
