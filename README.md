@@ -15,4 +15,4 @@ inventories, giving only stock weapons although I miss custom player skins great
 
 Shoutout to all Community RP Servers bending Source Engine game rules over the years :)
 
-Go to the [GitHub Page](https://dosmike.github.com/TF2-RolePlay-Docs) for functional documentation
+Go to the [GitHub Page](https://dosmike.github.io/TF2-RolePlay-Docs) for functional documentation
