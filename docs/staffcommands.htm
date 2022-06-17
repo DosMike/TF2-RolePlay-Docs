@@ -1,0 +1,243 @@
+<h1>Staff Commands</h1>
+
+<p>This is a quick reference for mod commands. It contains commands for not only the roleplay plugin, but also some of the more important dependencies.</p>
+
+<style type="text/css"> .PERM_MOD { background:#ffffc8; } .PERM_ADMIN { background:#c8ffc8; } .PERM_ROOT { background:#ffc8c8; } </style>
+<p>These commands are separated into three categories: <span class="PERM_MOD" title="ADMFLAG_GENERIC">Moderative</span>, <span class="PERM_ADMIN" title="ADMFLAG_CHEATS">Administrative</span> and <span class="PERM_ROOT" title="ADMFLAG_ROOT">Root</span>. While administrative and root commands are mostly used to set up the server or a map, root commands can potentially break things.</p>
+
+<b>Roleplay Plugin:</b>
+<table><tbody>
+<tr><td colspan=2>Clan Management</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/clanspritepath</tt> &lt;clan name> &lt;path></td><td>Sets the sprite path, relative to materials directory, of your clan you are leader in</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/clanspritesize</tt> &lt;clan name> &lt;size></td><td>Sets the sprite size of your clan you are leader in</td></tr>
+<tr><td colspan=2>Database</td></tr>
+<tr class="PERM_ROOT"><td><tt>/sqlquery</tt> &lt;query></td><td>Sends a quick query to the Roleplay database</td></tr>
+<tr class="PERM_MOD"><td><tt>/dbstats</tt></td><td>Prints queries per second tracked over the last minute</td></tr>
+<tr><td colspan=2>Doors/Apartments</td></tr>
+<tr class="PERM_ROOT"><td><tt>/setdoor</tt> &lt;type></td><td>Adds a Door to the database. Types: 0 = Not buyable, 1 = Buyable, 2 = Police only, 3 = Admin only</td></tr>
+<tr class="PERM_ROOT"><td><tt>/setdoorparent</tt> &lt;master entity id> &lt;slave entity id></td><td>Parents a Door with another for the buying / selling system</td></tr>
+<tr class="PERM_ROOT"><td><tt>/removedoorparent</tt>/<tt>/deletedoorparent</tt> &lt;master entity id> &lt;slave entity id></td><td>Unparents a Door with another</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/doorprice</tt> &lt;price></td><td>Sets the price of Door pointing at</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/setmaxlocks</tt> &lt;amount></td><td>Sets the max. locks of Door pointing at</td></tr>
+<tr class="PERM_MOD"><td><tt>/housename</tt> &lt;name></td><td>Sets the House name of Door pointing at</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/takedoorowner</tt></td><td>Delete all accesses of Door pointing at and existing sub doors</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/takedoorownerallrefund</tt></td><td>Delete all accesses of all Doors and refunds owners with the full price</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/givekeysadmin</tt></td><td>Shows Give Keys menu with total control of Door pointing at</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/takekeysadmin</tt></td><td>Shows Take Keys menu with total control of Door pointing at</td></tr>
+<tr class="PERM_ROOT"><td><tt>/reloaddoors</tt></td><td>Reloads doors and client rights from database</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/closealldoors</tt></td><td>Closed all doors</td></tr>
+<tr><td colspan=2>Props/Building</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/gcclean</tt></td><td>Delete all props currently tracked by the Garbage Collection</td></tr>
+<tr class="PERM_MOD"><td><tt>/gcinfo</tt></td><td>Get information on the tracked entity count</td></tr>
+<tr class="PERM_MOD"><td><tt>/deleteprop</tt> [entRef]</td><td>Deletes the prop looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/freezeprop</tt></td><td>Freezes the prop looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/unfreezeprop</tt></td><td>Unfreezes the prop looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/saveprop</tt></td><td>Saves the prop looking at in database</td></tr>
+<tr class="PERM_MOD"><td><tt>/removeprop</tt></td><td>Removes the prop looking at from database</td></tr>
+<tr class="PERM_MOD"><td><tt>/propowner</tt></td><td>Gets who spawned prop looking at in case of furniture</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/propmodel</tt></td><td>Gets model path of prop looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/allowfreeze</tt> &lt;#userid|name></td><td>Allows a player to save furniture at his home</td></tr>
+<tr class="PERM_MOD"><td><tt>/denyfreeze</tt> &lt;#userid|name></td><td>Denies a player to save furniture at his home</td></tr>
+<tr><td colspan=2>RP Items</td></tr>
+<tr class="PERM_ROOT"><td><tt>/additem</tt> &lt;#userid|name> &lt;id> [amount=1]</td><td>Adds an item to a player by database ID. Amount is 1 by default</td></tr>
+<tr class="PERM_ROOT"><td><tt>/takeitem</tt> &lt;#userid|name> &lt;id> [amount=1]</td><td>Takes an item from a player by database ID. Amount is 1 by default</td></tr>
+<tr><td colspan=2>Jobs/Status</td></tr>
+<tr class="PERM_MOD"><td><tt>/setstatus</tt> &lt;#userid|name> &lt;id></td><td>Sets a player's job status by id</td></tr>
+<tr class="PERM_MOD"><td><tt>/setstatusall</tt> &lt;#userid|name> &lt;type></td><td>Sets all player's job status of the given type</td></tr>
+<tr class="PERM_MOD"><td><tt>/removestatus</tt> &lt;#userid|name> &lt;id></td><td>Removes a player's job status by id</td></tr>
+<tr class="PERM_MOD"><td><tt>/removestatusall</tt> &lt;#userid|name> &lt;type></td><td>Removes all player's job status of the given type</td></tr>
+<tr class="PERM_ROOT"><td><tt>/setjob</tt> &lt;#userid|name> &lt;id></td><td>Sets player to a job by id</td></tr>
+<tr class="PERM_ROOT"><td><tt>/reloadjobs</tt></td><td>Reloads all jobs from database</td></tr>
+<tr><td colspan=2>Money/Currency</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/addbank</tt> &lt;#userid|name> &lt;amount></td><td>Adds an amount of money to a player's bank</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/addmoney</tt> &lt;#userid|name> &lt;amount></td><td>Adds an amount of money to a player's pocket</td></tr>
+<tr class="PERM_MOD"><td><tt>/dropmoney</tt> &lt;amount></td><td>Drops an amount of money</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/bank</tt></td><td>Opens bank menu</td></tr>
+<tr><td colspan=2>NPCs/Vendors</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/createnpc</tt> &lt;npc> &lt;type> &lt;id> [model] [notice]</td><td>Creates a NPC and saves in database</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/removenpc</tt> &lt;id></td><td>Removes a NPC from world and database by id</td></tr>
+<tr class="PERM_MOD"><td><tt>/npcname</tt> &lt;id> &lt;name></td><td>Sets a name to an NPC</td></tr>
+<tr class="PERM_MOD"><td><tt>/npcprompt</tt> &lt;id> &lt;prompt></td><td>Sets vendors response to criminals, or misc NPCs interaction response</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/addvendoritem</tt> &lt;NPC id> &lt;item id></td><td>Adds an item to a NPC by id and saves in database</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/removevendoritem</tt> &lt;vendor NPC id> &lt;item id></td><td>Removes an item from a vendor NPC and database</td></tr>
+<tr class="PERM_MOD"><td><tt>/npcwho</tt></td><td>Displays type and id of NPC pointing at</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/npclist</tt></td><td>Prints list of all NPC's in console</td></tr>
+<tr><td colspan=2>Utility/Misc</td></tr>
+<tr class="PERM_MOD"><td><tt>/entityname</tt></td><td>Displays entity name of the one looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/entities</tt></td><td>Displays entity slot usage information</td></tr>
+<tr class="PERM_MOD"><td><tt>/crime</tt> &lt;#userid|name> &lt;crime></td><td>Sets crime on a player</td></tr>
+<tr class="PERM_MOD"><td><tt>/cuff</tt> &lt;#userid|name></td><td>Cuffs a player</td></tr>
+<tr class="PERM_MOD"><td><tt>/uncuff</tt> &lt;#userid|name></td><td>Uncuffs a player</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/energy</tt> &lt;#userid|name> [energy]</td><td>Puts a player seconds away from starving</td></tr>
+<tr class="PERM_MOD"><td><tt>/push</tt></td><td>Pushes near player looking at</td></tr>
+<tr class="PERM_MOD"><td><tt>/spawn</tt> &lt;name></td><td>Quick spawns something by name from special keywords</td></tr>
+<tr class="PERM_MOD"><td><tt>/speed</tt> &lt;#userid|name> &lt;multiplier></td><td>Sets the speed multiplier of a player</td></tr>
+<tr class="PERM_ROOT"><td><tt>/createfakeclient</tt></td><td>Creates a fake client (This command was used to setup server-demo recording)</td></tr>
+<tr><td colspan=2>Zoning</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/listzones</tt></td><td>Lists information of all existing zones</td></tr>
+<tr class="PERM_ROOT"><td><tt>/findunlinkedhomezone</tt></td><td> - Teleports you to the next unlinked homezone, if any</td></tr>
+<tr class="PERM_ROOT"><td><tt>/linkhomezone</tt> [doorid]</td><td>Connect the door with the homezone you stand in, if dooid is not specified uses the door you are looking at</td></tr>
+</tbody></table>
+
+<b>TF2 RP Utils:</b>
+<table><tbody>
+<tr class="PERM_ADMIN"><td><tt>/spawnweapon</tt></td><td>Create a weapon and drop it in the world - Only supports normal rarity items</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/spawngun</tt></td><td>Create a weapon and drop it in the world - Only supports normal rarity items</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/resupply</tt> &lt;#userid|name></td><td>Regenerate yourself as if you used a resupply locker</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/give</tt> &lt;#userid|name> &lt;weapon></td><td>Weapon is the item index or classname, tf_weapon_ is optional</td></tr>
+<tr class="PERM_MOD"><td><tt>/fakegive</tt> &lt;#userid|name> &lt;weapon></td><td>Pretends to give a weapon</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/god</tt> &lt;#userid|name> &lt;1/0></td><td>Enables or disables god mode on a player</td></tr>
+<tr class="PERM_ADMIN"><td><tt>/hp</tt> &lt;#userid|name> &lt;health|'RESET'> ['MAX'|'FIX']</td><td>Sets health of a player, FIX will prevent overheal decay</td></tr>
+</tbody></table>
+<!--
+	RegConsoleCmd("sm_help", HelpCmd, "Displays SourceMod commands and descriptions");
+	RegConsoleCmd("sm_searchcmd", HelpCmd, "Searches SourceMod commands");
+	RegAdminCmd("sm_admin", Command_DisplayMenu, ADMFLAG_GENERIC, "Displays the admin menu");
+	RegAdminCmd("sm_ban", Command_Ban, ADMFLAG_BAN, "sm_ban <#userid|name> <minutes|0> [reason]");
+	RegAdminCmd("sm_unban", Command_Unban, ADMFLAG_UNBAN, "sm_unban <steamid|ip>");
+	RegAdminCmd("sm_addban", Command_AddBan, ADMFLAG_RCON, "sm_addban <time> <steamid> [reason]");
+	RegAdminCmd("sm_banip", Command_BanIp, ADMFLAG_BAN, "sm_banip <ip|#userid|name> <time> [reason]");
+	RegConsoleCmd("sm_abortban", Command_AbortBan, "sm_abortban");
+	RegAdminCmd("sm_say", Command_SmSay, ADMFLAG_CHAT, "sm_say <message> - sends message to all players");
+	RegAdminCmd("sm_csay", Command_SmCsay, ADMFLAG_CHAT, "sm_csay <message> - sends centered message to all players");
+		RegAdminCmd("sm_hsay", Command_SmHsay, ADMFLAG_CHAT, "sm_hsay <message> - sends hint message to all players");	
+	RegAdminCmd("sm_tsay", Command_SmTsay, ADMFLAG_CHAT, "sm_tsay [color] <message> - sends top-left message to all players");
+	RegAdminCmd("sm_chat", Command_SmChat, ADMFLAG_CHAT, "sm_chat <message> - sends message to admins");
+	RegAdminCmd("sm_psay", Command_SmPsay, ADMFLAG_CHAT, "sm_psay <name or #userid> <message> - sends private message");
+	RegAdminCmd("sm_msay", Command_SmMsay, ADMFLAG_CHAT, "sm_msay <message> - sends message as a menu panel");
+	RegAdminCmd("sm_mute", Command_Mute, ADMFLAG_CHAT, "sm_mute <player> - Removes a player's ability to use voice.");
+	RegAdminCmd("sm_gag", Command_Gag, ADMFLAG_CHAT, "sm_gag <player> - Removes a player's ability to use chat.");
+	RegAdminCmd("sm_silence", Command_Silence, ADMFLAG_CHAT, "sm_silence <player> - Removes a player's ability to use voice or chat.");
+	RegAdminCmd("sm_unmute", Command_Unmute, ADMFLAG_CHAT, "sm_unmute <player> - Restores a player's ability to use voice.");
+	RegAdminCmd("sm_ungag", Command_Ungag, ADMFLAG_CHAT, "sm_ungag <player> - Restores a player's ability to use chat.");
+	RegAdminCmd("sm_unsilence", Command_Unsilence, ADMFLAG_CHAT, "sm_unsilence <player> - Restores a player's ability to use voice and chat.");	
+	RegAdminCmd("sm_kick", Command_Kick, ADMFLAG_KICK, "sm_kick <#userid|name> [reason]");
+	RegAdminCmd("sm_map", Command_Map, ADMFLAG_CHANGEMAP, "sm_map <map>");
+	RegAdminCmd("sm_rcon", Command_Rcon, ADMFLAG_RCON, "sm_rcon <args>");
+	RegAdminCmd("sm_cvar", Command_Cvar, ADMFLAG_CONVARS, "sm_cvar <cvar> [value]");
+	RegAdminCmd("sm_resetcvar", Command_ResetCvar, ADMFLAG_CONVARS, "sm_resetcvar <cvar>");
+	RegAdminCmd("sm_execcfg", Command_ExecCfg, ADMFLAG_CONFIG, "sm_execcfg <filename>");
+	RegAdminCmd("sm_who", Command_Who, ADMFLAG_GENERIC, "sm_who [#userid|name]");
+	RegAdminCmd("sm_reloadadmins", Command_ReloadAdmins, ADMFLAG_BAN, "sm_reloadadmins");
+	RegAdminCmd("sm_cancelvote", Command_CancelVote, ADMFLAG_VOTE, "sm_cancelvote");
+	RegConsoleCmd("sm_revote", Command_ReVote);
+	RegConsoleCmd("timeleft", Command_Timeleft);
+	RegConsoleCmd("nextmap", Command_Nextmap);
+	RegConsoleCmd("motd", Command_Motd);
+	RegConsoleCmd("ff", Command_FriendlyFire);
+	RegAdminCmd("sm_votemap", Command_Votemap, ADMFLAG_VOTE|ADMFLAG_CHANGEMAP, "sm_votemap <mapname> [mapname2] ... [mapname5] ");
+	RegAdminCmd("sm_votekick", Command_Votekick, ADMFLAG_VOTE|ADMFLAG_KICK, "sm_votekick <player> [reason]");
+	RegAdminCmd("sm_voteban", Command_Voteban, ADMFLAG_VOTE|ADMFLAG_BAN, "sm_voteban <player> [reason]");
+	RegAdminCmd("sm_vote", Command_Vote, ADMFLAG_VOTE, "sm_vote <question> [Answer1] [Answer2] ... [Answer5]");
+	RegConsoleCmd("sm_cookies", Command_Cookie, "sm_cookies <name> [value]");
+	RegConsoleCmd("sm_settings", Command_Settings);	
+	RegAdminCmd("sm_weld", Command_Weld, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_rope", Command_Rope, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_wheel", Command_Wheel, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_thruster", Command_Thruster, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_thrust", Command_ThrusterPush, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_beacon", Command_Beacon, ADMFLAG_SLAY, "sm_beacon <#userid|name> [0/1]");
+	RegAdminCmd("sm_timebomb", Command_TimeBomb, ADMFLAG_SLAY, "sm_timebomb <#userid|name> [0/1]");
+	RegAdminCmd("sm_burn", Command_Burn, ADMFLAG_SLAY, "sm_burn <#userid|name> [time]");
+	RegAdminCmd("sm_firebomb", Command_FireBomb, ADMFLAG_SLAY, "sm_firebomb <#userid|name> [0/1]");
+	RegAdminCmd("sm_freeze", Command_Freeze, ADMFLAG_SLAY, "sm_freeze <#userid|name> [time]");
+	RegAdminCmd("sm_freezebomb", Command_FreezeBomb, ADMFLAG_SLAY, "sm_freezebomb <#userid|name> [0/1]");
+	RegAdminCmd("sm_gravity", Command_Gravity, ADMFLAG_SLAY, "sm_gravity <#userid|name> [amount] - Leave amount off to reset. Amount is 0.0 through 5.0");
+	RegAdminCmd("sm_blind", Command_Blind, ADMFLAG_SLAY, "sm_blind <#userid|name> [amount] - Leave amount off to reset.");
+	RegAdminCmd("sm_noclip", Command_NoClip, ADMFLAG_SLAY|ADMFLAG_CHEATS, "sm_noclip <#userid|name>");
+	RegAdminCmd("sm_drug", Command_Drug, ADMFLAG_SLAY, "sm_drug <#userid|name> [0/1]");
+	RegAdminCmd("sm_votegravity", Command_VoteGravity, ADMFLAG_VOTE, "sm_votegravity <amount> [amount2] ... [amount5]");
+	RegAdminCmd("sm_voteburn", Command_VoteBurn, ADMFLAG_VOTE|ADMFLAG_SLAY, "sm_voteburn <player>");
+	RegAdminCmd("sm_voteslay", Command_VoteSlay, ADMFLAG_VOTE|ADMFLAG_SLAY, "sm_voteslay <player>");
+	RegAdminCmd("sm_votealltalk", Command_VoteAlltalk, ADMFLAG_VOTE, "sm_votealltalk");
+	RegAdminCmd("sm_voteff", Command_VoteFF, ADMFLAG_VOTE, "sm_voteff");
+native void RegConsoleCmd(const char[] cmd, ConCmd callback, const char[] description="", int flags=0);
+native void RegAdminCmd(const char[] cmd,
+	RegAdminCmd("sm_mapvote", Command_Mapvote, ADMFLAG_CHANGEMAP, "sm_mapvote - Forces MapChooser to attempt to run a map vote now.");
+	RegAdminCmd("sm_setnextmap", Command_SetNextmap, ADMFLAG_CHANGEMAP, "sm_setnextmap <map>");
+	RegAdminCmd("sm_maphistory", Command_MapHistory, ADMFLAG_CHANGEMAP, "Shows the most recent maps played");
+	RegConsoleCmd("listmaps", Command_List);
+	RegConsoleCmd("sm_nominate", Command_Nominate);
+	RegAdminCmd("sm_nominate_addmap", Command_Addmap, ADMFLAG_CHANGEMAP, "sm_nominate_addmap <mapname> - Forces a map to be on the next mapvote.");
+	RegAdminCmd("sm_physgun", Command_EquipPhysicsGun, 0, "Equip Physics Gun!");
+	RegAdminCmd("sm_slap", Command_Slap, ADMFLAG_SLAY, "sm_slap <#userid|name> [damage]");
+	RegAdminCmd("sm_slay", Command_Slay, ADMFLAG_SLAY, "sm_slay <#userid|name>");
+	RegAdminCmd("sm_rename", Command_Rename, ADMFLAG_SLAY, "sm_rename <#userid|name>");
+	RegConsoleCmd("sm_rtv", Command_RTV);
+	RegAdminCmd("sm_play", Command_Play, ADMFLAG_GENERIC, "sm_play <#userid|name> <filename>");
+	RegAdminCmd("sm_sql_addadmin", Command_AddAdmin, ADMFLAG_ROOT, "Adds an admin to the SQL database");
+	RegAdminCmd("sm_sql_deladmin", Command_DelAdmin, ADMFLAG_ROOT, "Removes an admin from the SQL database");
+	RegAdminCmd("sm_sql_addgroup", Command_AddGroup, ADMFLAG_ROOT, "Adds a group to the SQL database");
+	RegAdminCmd("sm_sql_delgroup", Command_DelGroup, ADMFLAG_ROOT, "Removes a group from the SQL database");
+	RegAdminCmd("sm_sql_setadmingroups", Command_SetAdminGroups, ADMFLAG_ROOT, "Sets an admin's groups in the SQL database");
+	RegAdminCmd("sm_testcolors", Command_TestColors, ADMFLAG_ROOT);
+	RegConsoleCmd( "get_mvps",    get_mvps    );
+	RegConsoleCmd( "set_mvps",    set_mvps    );
+	RegConsoleCmd( "get_score",   get_score   );
+	RegConsoleCmd( "set_score",   set_score   );
+	RegConsoleCmd( "get_assists", get_assists );
+	RegConsoleCmd( "set_assists", set_assists );
+	RegConsoleCmd( "get_clantag", get_clantag );
+	RegConsoleCmd( "set_clantag", set_clantag );
+	RegConsoleCmd( "get_teamscore", get_teamscore );
+	RegConsoleCmd( "set_teamscore", set_teamscore );
+	RegConsoleCmd("sm_listammo", sm_listammo, "sm_listammo <send|data> [target] - Lists current ammo for self or specified player");
+	RegConsoleCmd("sm_listweapons", sm_listweapons, "sm_listweapons <send|data> [target] - Lists current weapons for self or specified player");
+	RegConsoleCmd("sm_setammo", sm_setammo, "sm_setammo <ammotype> <amount> <send|data> [target]");
+	RegConsoleCmd("sm_teststrings", sm_teststrings);
+		RegConsoleCmd("gr_getstate", gr_getstate);
+		RegConsoleCmd("gr_ttr", gr_ttr);
+		RegConsoleCmd("gr_tbs", gr_tbs);
+		RegConsoleCmd("gr_nextspawn", gr_nextspawn);
+		RegConsoleCmd("gr_settime", gr_settime);
+		RegConsoleCmd("gr_getgoal", gr_getgoal);
+		RegConsoleCmd("gr_setgoal", gr_setgoal);
+		RegConsoleCmd("gr_getstimmer", gr_getstimmer);
+	RegConsoleCmd("sm_burnme", Command_Burn);
+	RegConsoleCmd("sm_respawn", Command_Respawn);
+	RegConsoleCmd("sm_disguise", Command_Disguise);
+	RegConsoleCmd("sm_remdisguise", Command_RemDisguise);
+	RegConsoleCmd("sm_class", Command_Class);
+	RegConsoleCmd("sm_remove", Command_Remove);
+	RegConsoleCmd("sm_changeclass", Command_ChangeClass);
+	RegConsoleCmd("sm_regenerate", Command_Regenerate);
+	RegConsoleCmd("sm_uberme", Command_UberMe);
+	RegConsoleCmd("sm_unuberme", Command_UnUberMe);
+	RegConsoleCmd("sm_setpowerplay", Command_SetPowerPlay);
+	RegConsoleCmd("sm_panic", Command_Panic);
+	RegConsoleCmd("sm_bighit", Command_BigHit);
+	RegConsoleCmd("sm_frighten", Command_Frighten);
+	RegAdminCmd("sm_addattrib", Command_AddAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_addwepatt", Command_AddWepAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_remattrib", Command_RemAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_remwepatt", Command_RemWepAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_remallatt", Command_RemAllAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_remallwepatt", Command_RemAllWepAttrib, ADMFLAG_ROOT);
+	RegAdminCmd("sm_getattrib", Command_GetAttrByName, ADMFLAG_ROOT);
+//	RegAdminCmd("sm_getattrid", Command_GetAttrByID, ADMFLAG_ROOT);
+	RegAdminCmd("sm_getattrs", Command_GetAttrs, ADMFLAG_ROOT);
+//	RegAdminCmd("sm_attrset", SetValueStuff, ADMFLAG_ROOT); //Definitely unsafe as all hell
+	RegAdminCmd("tf2items_manager_reload", CmdReload, ADMFLAG_GENERIC);
+	RegConsoleCmd("tf2items_enable", CmdEnable);
+	RegConsoleCmd("tf2items_disable", CmdDisable);
+	RegAdminCmd("sm_pg", 			Command_EquipPhysicsGun, ADMFLAG_ROOT, "Equip a Physics Gun");
+	RegAdminCmd("sm_physgun", 		Command_EquipPhysicsGun, ADMFLAG_ROOT, "Equip a Physics Gun");
+	RegAdminCmd("sm_physicsgun", 	Command_EquipPhysicsGun, ADMFLAG_ROOT, "Equip a Physics Gun");
+	RegAdminCmd("sm_psb", Command_PocketSandboxMenu, ADMFLAG_ROOT, "Open the Pocket Sandbox Menu");
+	RegAdminCmd("sm_psandbox", Command_PocketSandboxMenu, ADMFLAG_ROOT, "Open the Pocket Sandbox Menu");
+	RegAdminCmd("sm_pocketsandbox", Command_PocketSandboxMenu, ADMFLAG_ROOT, "Open the Pocket Sandbox Menu");
+	RegAdminCmd("sm_freeze", Command_Freeze, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_unfreeze", Command_UnFreeze, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_nograv", Command_NoGrav, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_grav", Command_Grav, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_freeze_all", Command_FreezeAll, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_unfreeze_all", Command_UnFreezeAll, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_nograv_all", Command_NoGravAll, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_grav_all", Command_GravAll, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_pivot", Command_Pivot, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_stoppivot", Command_RemPivot, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_flip", Command_Flip, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_punt", Command_Punt, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_wake", Command_Wake, ADMFLAG_CHEATS, "");
+	RegAdminCmd("sm_sleep", Command_Sleep, ADMFLAG_CHEATS, "");
+-->

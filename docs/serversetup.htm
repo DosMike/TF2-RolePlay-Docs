@@ -1,0 +1,18 @@
+<h1>Server Setup</h1>
+
+<p>Requires SourceMod 1.10, MySQL Database, PHP-Server</p>
+<p>Runtime Dependencies: TF2Items, TF2Attributes, TFEconData, TFUtils, SteamWorks, MotdMenu, TF2HudMsg, VPhysics, BattlefieldDucks TF2 Physicsgun @master</p>
+
+<p>Put Map (.bsp and .rpc) into the game servers maps directory, only the compressed map (.bsp.bz2) is required for fastDL</p>
+
+<p>The RPC files make setup drastically simpler, as zones do not have to be set up ingame anymore, and depending on the RPC files, doors are already linked/setup/named</p>
+<ul>
+<li>Boot up the map and fix up any door that should be named, owned, cop/admin only using /setdoor &lt;type> (You might want to /reloaddoors often during that process) <b>Doors have to be in their initial position for the plugin to find them again! (try /closealldoors)</b>
+<li>Set up other door properties, like house name, door name (changeable by players when owned), door price (for buyable doors only), parent relation-ships
+<li>Attach homezones with /findunlinkedhomezone, look at main door and /linkhomezone. If the door is not visible from within zone, /doorinfo the main door and standing in the homezone /linkhomezone [dbid]
+<li>Create NPCs, in TF2 these need to be of the npc class simple_bot for eyes to work somewhat reliably. Otherwise prop_dynamic is just fine. You have to increment the ID manually</li>
+</ul>
+
+<p><b>Please use the RP DB Configuration utility to set up items.</b> Please note that this tool is meant for maintanance, and will not neccessarly work correctly when manipulating online players</p>
+
+<p>This section is Work in Progress...</p>
